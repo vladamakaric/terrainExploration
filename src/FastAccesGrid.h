@@ -27,7 +27,7 @@ public:
 	bool LineSegmentCollisionWithObstacles(const CLineSegment &_ls);
 	bool LineSegmentCollisionWithObstacles_ForbiddenLSPoints(const CLineSegment &_ls);
 
-	CObstacle* PointInObstacle(CVector &_point);
+	CObstacle* PointInObstacle(CVector _point);
 	
 
 	void AddTileToSTLVector(int _r, int _c, vector<CFAGTile*> &_tilesVector);

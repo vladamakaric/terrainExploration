@@ -2,7 +2,7 @@
 #ne ignorise direktorijume, jer u suprotnom kad god naidje na dir/,
 #on ce ga odbaciti i nece se rekurzivno spustiti u njega, sto nam treba
 !*/
-!*.c
+!*.cpp
 !*.h
 !.gitignore
 !makefile

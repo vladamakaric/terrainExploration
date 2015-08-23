@@ -1,24 +1,24 @@
 #include "Tesselator.h"
 #include <iostream>
 
-void CALLBACK tessErrorCB(GLenum errorCode)
+void tessErrorCB(GLenum errorCode)
 {
     const GLubyte *errorStr;
     errorStr = gluErrorString(errorCode);
 	cout << errorStr << endl;
 }
 
-void CALLBACK tessBeginCB(GLenum which)
+void tessBeginCB(GLenum which)
 {
     glBegin(which);
 }
 
-void CALLBACK tessEndCB()
+void tessEndCB()
 {
     glEnd();
 }
 
-void CALLBACK tessVertexCB(const GLvoid *data)
+void tessVertexCB(const GLvoid *data)
 {
     const GLdouble *ptr = (const GLdouble*)data;
 /*	
@@ -30,7 +30,7 @@ void CALLBACK tessVertexCB(const GLvoid *data)
 	glVertex3dv(ptr);
 }
 
-void CALLBACK tessCombineCB(const GLdouble newVertex[3], const GLdouble *neighborVertex[4],
+void tessCombineCB(const GLdouble newVertex[3], const GLdouble *neighborVertex[4],
                             const GLfloat neighborWeight[4], GLdouble **outData)
 {
     // copy new intersect vertex to local array
@@ -90,11 +90,11 @@ int CTesselator::Tesselate(vector<vector<CVector*>> &_contours)
 		}
 	}
 
-    gluTessCallback(tess, GLU_TESS_BEGIN, (void (CALLBACK *)())tessBeginCB);
-    gluTessCallback(tess, GLU_TESS_END, (void (CALLBACK *)())tessEndCB);
-    gluTessCallback(tess, GLU_TESS_ERROR, (void (CALLBACK *)())tessErrorCB);
-    gluTessCallback(tess, GLU_TESS_VERTEX, (void (CALLBACK *)())tessVertexCB);
-	gluTessCallback(tess, GLU_TESS_COMBINE, (void (CALLBACK *)())tessCombineCB);
+    gluTessCallback(tess, GLU_TESS_BEGIN, (void (*)())tessBeginCB);
+    gluTessCallback(tess, GLU_TESS_END, (void (*)())tessEndCB);
+    gluTessCallback(tess, GLU_TESS_ERROR, (void (*)())tessErrorCB);
+    gluTessCallback(tess, GLU_TESS_VERTEX, (void (*)())tessVertexCB);
+	gluTessCallback(tess, GLU_TESS_COMBINE, (void (*)())tessCombineCB);
 
 	if(_contours.size()>1)
 	{
@@ -147,10 +147,10 @@ int CTesselator::Tesselate(CPolygon* _p)
 		inputPoints[i][2] = 0;
 	}
 
-    gluTessCallback(tess, GLU_TESS_BEGIN, (void (CALLBACK *)())tessBeginCB);
-    gluTessCallback(tess, GLU_TESS_END, (void (CALLBACK *)())tessEndCB);
-    gluTessCallback(tess, GLU_TESS_ERROR, (void (CALLBACK *)())tessErrorCB);
-    gluTessCallback(tess, GLU_TESS_VERTEX, (void (CALLBACK *)())tessVertexCB);
+    gluTessCallback(tess, GLU_TESS_BEGIN, (void (*)())tessBeginCB);
+    gluTessCallback(tess, GLU_TESS_END, (void (*)())tessEndCB);
+    gluTessCallback(tess, GLU_TESS_ERROR, (void (*)())tessErrorCB);
+    gluTessCallback(tess, GLU_TESS_VERTEX, (void (*)())tessVertexCB);
 	//gluTessCallback(tess, GLU_TESS_COMBINE, (void (CALLBACK *)())tessCombineCB);
 
 	gluTessProperty(tess, GLU_TESS_WINDING_RULE, GLU_TESS_WINDING_NONZERO);

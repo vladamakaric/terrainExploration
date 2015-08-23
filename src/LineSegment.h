@@ -14,7 +14,7 @@ public:
 	CVector MiddlePoint() const;
 	double Lenght() const;
 	void Set(const CNodeLineSegment &_nls) { a=_nls.up->position; b=_nls.down->position; }
-	void Set(CVector &_a, CVector &_b){ a=_a; b=_b; }
+	void Set(CVector _a, CVector _b){ a=_a; b=_b; }
 	void Draw();
 };
 

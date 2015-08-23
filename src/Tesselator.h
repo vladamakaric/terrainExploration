@@ -1,4 +1,7 @@
-#pragma once
+#ifndef TESSELATOR_H
+#define TESSELATOR_H
+
+
 #include "global.h"
 #include <iostream>
 #include <list>
@@ -12,8 +15,10 @@ public:
 	static int Tesselate(vector<vector<CVector*>> &_contours);
 };
 
-void CALLBACK tessErrorCB(GLenum errorCode);
-void CALLBACK tessBeginCB(GLenum which);
-void CALLBACK tessEndCB();
-void CALLBACK tessVertexCB(const GLvoid *data);
-void CALLBACK tessCombineCB(const GLdouble newVertex[3], const GLdouble *neighborVertex[4], const GLfloat neighborWeight[4], GLdouble **outData);
+void tessErrorCB(GLenum errorCode);
+void tessBeginCB(GLenum which);
+void tessEndCB();
+void tessVertexCB(const GLvoid *data);
+void tessCombineCB(const GLdouble newVertex[3], const GLdouble *neighborVertex[4], const GLfloat neighborWeight[4], GLdouble **outData);
+
+#endif

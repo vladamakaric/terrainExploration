@@ -67,12 +67,25 @@ void CCamera::Update(int _screenWidth, int _screenHeight, int _mapWidth, int _ma
 
 void CCamera::Events()
 {
+	if( event.type == SDL_KEYDOWN )
+	{               
+		switch( event.key.keysym.sym )
+		{
+			case SDLK_PLUS: 
+			{
+				zoom*=1.05;
+			}break;
+			case SDLK_MINUS: 
+			{
+				zoom*=0.95;
+			}break;
+		}
+	}
+
 	// if(event.type == SDL_MOUSEWHEEL){
 	// 	if (event.wheel.y < 0){
-	// 		zoom*=1.05;
 	// 	} 
 	// 	else{
-	// 		zoom*=0.95;
 	// 	}
 	// }
 }

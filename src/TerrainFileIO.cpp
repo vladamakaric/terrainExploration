@@ -50,7 +50,7 @@ CTerrain::~CTerrain()
 
 
 
-	fprintf(F1, "%d ", obstacles.size());
+	fprintf(F1, "%d ", (int)obstacles.size());
 
 	int pointNum;
 	for(int i=0; i < obstacles.size(); i++)

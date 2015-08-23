@@ -641,22 +641,22 @@ CObstacle* CFastAccesGrid::TileCompletelyInObstacle( CFAGTile* _ftile )
 	CObstacle* returnObstacle;
 
 	if(!(returnObstacle = U_TERRAIN->PointInObstacles(testEdge)))
-		return false;
+		return NULL;
 
 	testEdge.x += tileWidth;
 
 	if(!(returnObstacle = U_TERRAIN->PointInObstacles(testEdge)))
-		return false;
+		return NULL;
 
 	testEdge.y += tileHeight;
 
 	if(!(returnObstacle = U_TERRAIN->PointInObstacles(testEdge)))
-		return false;
+		return NULL;
 
 	testEdge.x -= tileWidth;
 
 	if(!(returnObstacle = U_TERRAIN->PointInObstacles(testEdge)))
-		return false;
+		return NULL;
 
 	return returnObstacle;
 }

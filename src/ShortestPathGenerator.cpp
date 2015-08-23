@@ -42,11 +42,10 @@ void CShortestPathGenerator::Generate(CPathFindingNode *_start, CPathFindingNode
 
 void CShortestPathGenerator::CalculateNextNode()
 {
-	int F;
-	int Fmin=9999999999999;
-	CPathFindingNode *next;
+	CPathFindingNode *next = openNodes[0];
+	int Fmin=next->F;
 	
-	for(int i=0; i< openNodes.size(); i++)
+	for(int i=1; i< openNodes.size(); i++)
 	{
 		if(openNodes[i]->closed)
 			continue;

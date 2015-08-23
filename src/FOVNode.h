@@ -1,4 +1,6 @@
-#pragma once
+#ifndef FOV_NODE_H
+#define FOV_NODE_H
+
 #include "Node.h"
 #include "Vector.h"
 #include "LineSegment.h"
@@ -36,4 +38,4 @@ public:
 
 };
 
-
+#endif

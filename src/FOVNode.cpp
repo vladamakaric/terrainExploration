@@ -1,4 +1,6 @@
 #include "FOVNode.h"
+
+#include "NLSFOVNDAT.h"
 #include "f_distance.h"
 
 void CFOVNode::AddNeighboursToOpenNodesAndCalculatePFParams(vector<CPathFindingNode*> &_openNodes, CVector _goal)

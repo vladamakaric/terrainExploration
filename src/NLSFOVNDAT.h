@@ -1,4 +1,5 @@
-#pragma once
+#ifndef NLSFOVNDAT_H
+#define NLSFOVNDAT_H
 
 #include "FOVNode.h"
 #include "FieldOfView.h"
@@ -26,3 +27,5 @@ public:
 	bool ConnectionGood(CFOVNode* _node);
 	void UpdateConnections(const vector<CPath*> &paths);
 };
+
+#endif

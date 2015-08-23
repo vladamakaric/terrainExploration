@@ -71,11 +71,11 @@ void CCamera::Events()
 	{               
 		switch( event.key.keysym.sym )
 		{
-			case SDLK_PLUS: 
+			case SDLK_UP: 
 			{
 				zoom*=1.05;
 			}break;
-			case SDLK_MINUS: 
+			case SDLK_DOWN: 
 			{
 				zoom*=0.95;
 			}break;

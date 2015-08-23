@@ -16,7 +16,7 @@ As prerequisites for this simulation (UTE), the following problems had to be sol
 The result of the research is a paper on unknown terrain exploring that was published in the 2011 Petnica science center students' projects journal, ISBN: 978-86-7861-048-6.
 
 The paper, with all the details of the above mentione problems and more (most of it is in serbian)
-is available in [PDF](flocking2010.pdf).
+is available in [PDF](ute2011.pdf).
 
 ##Dependencies, compilation
 The only library needed to compile this is [libsdl1.2](https://www.libsdl.org/download-1.2.php)
@@ -24,12 +24,17 @@ For compilation just use the makefile.
 
 ##Instructions
 
-Run the application from the console. Type the number of the algorithm you want to run. 
-After that type 0 to create a new simulation. Press ENTER.
+Run the application from the console. Type 0 to proceduraly generate the terrain and 0 again to not save it to a file.
 
-![Alt text](/../screenshots/img/consoleScreen.png?raw=true "Optional Title")
+![Alt text](/../screenshots/img/console.png?raw=true "Optional Title")
 
-After that you will get a new window with a blank screen, where you must define obstacles,
+After that you will get a new window with terrain, it will be zoomed in, zoom out using the down arrow until
+you can see the whole terrain. 
+
+![Alt text](/../screenshots/img/console.png?raw=true "Optional Title")
+
+
+Left click anywhere to place
 goal and entity positions, the instructions for doing so are given in the console window.
 
 ##Example

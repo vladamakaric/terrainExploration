@@ -5,5 +5,7 @@
 !*.cpp
 !*.h
 !*.pdf
+!*.exe
+!*.dll
 !.gitignore
 !makefile

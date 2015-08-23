@@ -47,7 +47,15 @@ CSimulation::CSimulation(int _mapWidth, int _mapHeight)
 
 	startPos.x = -100;
 	//////////////////
-	printf("dali zelite da ucitate teren iz fajla ili zelite da se avtomatski generise? (1:0): ");
+	
+	printf("\n**************************************************");
+	printf("\nThis is an unknown terrain exploration simulation.");
+	printf("\nIt simulates a entity with a limited filed of view exploring unknown terrain.");
+	printf("\n--------------Vladimir Makaric 2011---------------");
+	printf("\n**************************************************");
+
+	printf("\nDo you want to load the terrain from a file or automaticaly generate it? (1:0): ");
+
 	int readFromFile;
 	scanf ("%d",&readFromFile);
 	char *readFile=0;
@@ -55,20 +63,20 @@ CSimulation::CSimulation(int _mapWidth, int _mapHeight)
 	if(readFromFile)
 	{
 		readFile = new char[100];
-		printf("\n kako se zove fajl iz kojeg ocete da ucitate teren?: ");
+		printf("\n enter file name: ");
 		scanf("%s", readFile);
 	}
 	else
 	{
 		
 		int writeToFile;
-		printf("\n dali zelite da se avtomatski generisan teren zapampti u fajl?: (1:0) ");
+		printf("\nDo you want to save the automatically generated terrain in a file? (1:0):");
 		scanf("%d", &writeToFile);
 
 		if(writeToFile)
 		{
 			writeFileName = new char[100];
-			printf("\n kako zelite da se zove fajl u koji ce biti zapisan avtomarski generisan teren?: ");
+			printf("\n enter file name: ");
 			scanf("%s", writeFileName);
 		}
 	}
@@ -80,6 +88,17 @@ CSimulation::CSimulation(int _mapWidth, int _mapHeight)
 		terrain = new CTerrain(readFile);
 	else
 		terrain = new CTerrain(1000, 96, 770, 1040, 1000, 700, 60 , 400, 15, 1.0/20.0, 8 , _mapWidth, _mapHeight); //Velicina talbe d0 20 000
+
+
+	printf("\n***************Instructions************************");
+	printf("\n----------Controlling the entity-------------------");
+	printf("\nnew position/start: left mouse click");
+	printf("\nNew goal: right mouse click");
+	printf("\nField of view diameter change: Numpad +/-");
+	printf("\n----------Controlling the viewport-----------------");
+	printf("\nzoom in: up arrow");
+	printf("\nzoom out: down arrow");
+	printf("\n**************************************************\n");
 
 	CEM = 0;
 	CPCShapes::Initialize();
@@ -117,10 +136,7 @@ void CSimulation::InitGraphix()
 	glEnable(GL_STENCIL_TEST);
 	glClearStencil(0x0);
 
-
-
-
-    SDL_WM_SetCaption( "Upravljanje jedinke: nova pozicija/pocetak(levi klik), novi cilj(desni klik), brzina(Q/A), velicina vidnog polja(+/-), delay(W/S) ", NULL );
+    SDL_WM_SetCaption( "Unknown terrain exploration", NULL );
 }
 
 void CSimulation::SetWindow(int _screenW, int _screenH, int _screenBPP)

@@ -31,19 +31,29 @@ Run the application from the console. Type 0 to proceduraly generate the terrain
 After that you will get a new window with terrain, it will be zoomed in, zoom out using the down arrow until
 you can see the whole terrain. 
 
-![Alt text](/../screenshots/img/console.png?raw=true "Optional Title")
+![Alt text](/../screenshots/img/1.png?raw=true "Optional Title")
 
 
-Left click anywhere to place
-goal and entity positions, the instructions for doing so are given in the console window.
+Left click anywhere to place the entity.
 
-##Example
+![Alt text](/../screenshots/img/2.png?raw=true "Optional Title")
 
+The circle around the entity (which is represented by a point), will light up, this represents the explored terrain.
 
-###Leader following
-![Alt text](/../screenshots/img/leader.png?raw=true "Optional Title")
-###Closest entity following
-![Alt text](/../screenshots/img/closest.png?raw=true "Optional Title")
-###Autonomous movement
-![Alt text](/../screenshots/img/autonomous.png?raw=true "Optional Title")
+Right clicking somewhere in the unexplored terrain will initiate the exploration, the entity will attempt to move to that position.
+
+![Alt text](/../screenshots/img/3.png?raw=true "Optional Title")
+
+After the entity has reached the goal you gave it, you can right click again to give it another goal, for example you can click in the area inside the obstacle.
+
+![Alt text](/../screenshots/img/4.png?raw=true "Optional Title")
+
+The entity does not know that this goal is unreachable, because that area is unexplored. It will try to reach the point until it sees the whole obstacle. Then the obstacle turns red indicating that the entity has seen it fully and knows that points inside it are unreachable.
+
+![Alt text](/../screenshots/img/5.png?raw=true "Optional Title")
+
+Here are examples of paths traced out by the enitty when trying to reach goal points in different terrains, notice the smootheness of the terrain, that is a consequence of the small viewpoint, the entity keeps moving towards the edge of its viewport thinking that the obstacle wil end there.
+
+![Alt text](/../screenshots/img/6.png?raw=true "Optional Title")
+
 

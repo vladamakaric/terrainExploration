@@ -19,8 +19,7 @@ The paper, with all the details of the above mentione problems and more (most of
 is available in [PDF](ute2011.pdf).
 
 ##Dependencies, compilation
-The only library needed to compile this is [libsdl1.2](https://www.libsdl.org/download-1.2.php)
-For compilation just use the makefile.
+The only library needed to compile this is [libsdl1.2-dev](https://www.libsdl.org/download-1.2.php). For compilation just use the makefile.
 
 ##Instructions
 
